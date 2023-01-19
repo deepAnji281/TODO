@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    
     <link rel="stylesheet" href="/Css/home.css">;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <h1 class="heading1">TODO APP</h1>
-    <form action="post"  >
+    <form action="/add-task" method="post"  >
     <div class="add-content" >
         <label class="task-label">DESCRIPTION</label><br>
-        <input type='text'placeholder="what do you need to do?" class="input-task"><br>
+        <input type='text'placeholder="what do you need to do?" class="input-task"
+        name="task" required><br>
         </div>
-        <div id="catogery-time-date">
+      <div id="parent">
+        <div id="category-time-date">
 
             <label class="category">CATEGORY</label>
-            <select id="person">
+            <select id="person" name="category" required>
              <option style="background-color: pink; color:gray">Choose an category</option>
              <option style="background-color: blue;">School</option>
              <option style="background-color: green;">Work</option>
@@ -25,7 +29,33 @@
              <option style="background-color: red;">Other</option>
             </select>
         </div>
+        <div id="date">
+            <label>DUE DATE</label>
+            <input type="datetime-local" placeholder="dd/mm/yy" name="due">
+        </div>
+      </div>
+
+      <div class="btn">
+       <button style="background-color: gray; "> ADD TASK</button>
+       <button style="background-color: Red;">DELETE TASK</button>
+      </div>
 
     </form>
+    <ul style="margin-top: 40px; margin-left:150px; list-style: none;" >
+        
+            <%for(let i of input_arr){%>
+
+               <div style="display: flex ;gap:15rem; justify-content: center; align-items: center;">
+                <li style="font-size: 18px; color:blueviolet;text-transform:capitalize;font-family: sans-serif; font-style: italic;"><input type="checkbox" style="margin-left:35px"><%=i.task%></li>
+                <li>Date- &nbsp; <%=i.due %><li>
+                <div class="category-list"><%=i.category %></div>
+                
+            
+            </div><hr>
+                
+    
+           <%}%>
+       
+    </ul>
 </body>
 </html>

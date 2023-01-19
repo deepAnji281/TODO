@@ -13,7 +13,7 @@ body{
 }
 form{
     margin-top: 1rem;
-    margin-left: 28rem;
+    margin-left: 24rem;
     height:350px;
     width:600px;
     border: 2px solid gray;
@@ -25,6 +25,7 @@ form{
     font-size:20px;
     color:blueviolet;
     font-style: italic;
+    text-transform: capitalize;
     
 }
 .task-label{
@@ -38,7 +39,7 @@ form{
 }
 .category{
     color:gray;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bolder;
     font-family: sans-serif;
     margin-top: 2rem;
@@ -47,15 +48,61 @@ form{
 }
 .category-input{
     height: 60px;
-    width:250px;
+    width:220px;
 }
 #person{
-    font-size: 18px;
+    font-size: 15px;
     font-style: italic;
     
 }
 #category-time-date{
     height: 90px;
-    width:600px;
-    border: 2px solid gray;
+    width:320px;
+    border: 0.5px solid gray;
+    margin-top: 3px;;
+}
+#parent{
+    display: flex;
+    gap:2px;
+}
+#date{
+    height:90px;
+    width:274px;
+    border:0.5px solid gray;
+    margin-top:3px;
+    color:gray;
+    font-weight: bolder;
+    font-size:15px;
+    font-family: sans-serif;
+}
+#date input{
+    margin-left: 25px;
+    font-style: italic;
+
+}
+.btn{
+    margin-left: 50px;
+    margin-top:1.5rem;
+}
+.btn button{
+    height: 80px;
+    width:250px;
+    text-align: center;
+    font-size: large;
+    color:white;
+    font-family: sans-serif;
+}
+.category-list{
+    height:30px;
+    width:90px;
+    
+    font-size:18px;
+   
+    text-align: center;
+    background-color: skyblue;
+}
+ul{
+    height: fit-content;
+    width: fit-content;
+    border:3px solid orangered
 }
