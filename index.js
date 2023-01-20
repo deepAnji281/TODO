@@ -1,8 +1,10 @@
 const express=require('express');
 const app=express();
-const port=4000;
+const port=9000;
 app.use(express.urlencoded());
 app.use('/',require('./routes/index'));
+const db=require('./config/mongoose');
+const tasks=require('./models/schema')
 
 app.set('view engine','ejs');
 app.set('views','./view');
